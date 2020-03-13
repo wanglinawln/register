@@ -1,0 +1,247 @@
+.bg{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(https://passport.baidu.com/static/passpc-account/img/reg_bg_min.jpg) no-repeat;
+    background-size: cover;
+}
+.logo{
+    position: fixed;
+    left: 70px;
+    top: 60px;
+    width: 124.4px;
+    height: 40px;
+    background: url(https://passport.baidu.com/static/passpc-account/img/baidu.png) no-repeat;
+    background-size: cover;
+}
+.main{
+    position: absolute;
+    right: 139px;
+    top: 50%;
+    margin-top: -340px;
+    width: 480px;
+    height: 680px;
+    background: rgba(255,255,255,.9);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.new-reg-guide-login {
+    margin: 50px 0 50px 39px;
+}
+.new-reg-guide-login p span {
+    color: #2e58ff;
+    cursor: pointer;
+}
+.new-reg-guide-login p {
+    font-size: 14px;
+    color: #9B9B9B;
+    margin: 0;
+}
+.new-reg-guide-login h3 {
+    font-size: 36px;
+    color: #000;
+    margin: 0;
+}
+
+.mod-new-reg-text {
+    position: fixed;
+    left: 195px;
+    top: 314px;
+    color: #fff;
+}
+.mod-new-reg-text h3 {
+    font-size: 54px;
+    letter-spacing: 0;
+    font-weight: 700;
+    margin: 0;
+}
+.mod-new-reg-text p {
+    font-size: 32px;
+    letter-spacing: 3.81px;
+    font-weight: 300;
+    margin: 0;
+}
+.mod-new-reg-footer {
+    position: fixed;
+    left: 70px;
+    bottom: 57px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.mod-new-reg-footer .mod-new-reg-help .mode-new-reg-help-text {
+    opacity: .8;
+}
+
+.mod-new-reg-footer .mod-new-reg-help .mod-new-reg-line {
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    filter: alpha(opacity=78);
+    opacity: .78;
+    margin: 0 12px 0 13px;
+    background: #fff;
+    position: relative;
+    top: 1px;
+}
+.mod-new-reg-footer .mod-new-reg-help a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+.mod-new-reg-service {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(https://passport.baidu.com/static/passpc-account/img/reg/service-2x.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 3px;
+}
+.mod-new-reg-footer .mod-new-reg-copyright {
+    filter: alpha(opacity=54);
+    opacity: .54;
+    font-size: 12px;
+    color: #fff;
+    display: inline-block;
+    padding-left: 30px;
+}
+.pass-text-input {
+    padding: 11px 10px;
+    max-height: 40px;
+    background: #fff;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 321px;
+    color: #000;
+}
+.pass-label {
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 0;
+    text-align: right;
+    width: 82px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 15px;
+    margin-left: 40px;
+    font-weight: 200;
+}
+.pass-form-item {
+    margin-bottom: 40px;
+}
+.new-password-tip {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 350px;
+    left: 413px;
+    background: url(https://passport.baidu.com/static/passpc-account/img/reg/pwdtip-2x.png) no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
+.pass-text-input-verifyCode {
+    padding: 11px 10px;
+    max-height: 40px;
+    background: #fff;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #000;
+    width: 184px;
+    margin-right: 9px;
+}
+.pass-button-verifyCodeSend {
+    width: 126px;
+    height: 40px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #E0E0E0;
+    font-size: 13px;
+    color: #333;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
+    cursor: pointer;
+}
+.pass-button-submit {
+    background: #BDCEFC;
+    border-radius: 25px;
+    width: 399px;
+    display: block;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    margin: auto;
+    margin-top: 70px;
+    border: 1px solid #BDCEFC;
+}
+.pass-form-item-isAgree {
+    margin:20px auto;
+    width: 399px;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+.pass-form-item-isAgree label {
+    color: #666;
+    margin-left: 5px;
+}
+
+.pass-form-item-isAgree input{
+    position: relative;
+    top: 3px;
+}
+.pass-form-item-isAgree a {
+    color: #2E58FF;
+    text-decoration: none;
+    cursor: pointer;
+}
+#tel-validation-message{
+    margin-left: 105px;
+    color: red;
+    height: 5px;
+    font-size: 13px;
+}
+#user-validation-message{
+    margin-left: 105px;
+    color: red;
+    height: 5px;
+    font-size: 13px;
+}
+#pwd-validation-message{
+    margin-left: 105px;
+    color: red;
+    height: 5px;
+    font-size: 13px;
+}
+#code-validation-message{
+    margin-left: 105px;
+    color: red;
+    height: 5px;
+    font-size: 13px;
+}
+.pwd-checklist {
+    background: rgba(27, 27, 27, 0.808);
+    box-shadow: none;
+    border: 0;
+    padding: 8.8px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: 9px;
+    width: 300px;
+    color: #fff;
+    position: absolute;
+    left: 117px;
+    top:257px;
+    display: none;
+}
