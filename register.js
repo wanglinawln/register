@@ -11,16 +11,18 @@ $(function(){
     //calc button click event
     $register.click(function(){
         //validate if error return
-        if(!validateUser('#user')||!validateTel('#tel')||!validatePwd('#pwd')||!validateCode('#code')){
-            return;
-        } 
-        else{
+        validate('#user');
+        validate('#pwd');
+        validate('#tel');
+        validate('#code');
+        if(validate('#user')&&validate('#tel')&&validate('#pwd')&&validate('#code')){
             alert("注册成功！");
-        }
+        } 
+        
     });
     $btnCode.click(function(){
         //validate if error return
-        if(!validateUser('#user')||!validateTel('#tel')||!validatePwd('#pwd')){
+        if(!validate('#user')||!validate('#tel')||!validate('#pwd')){
             $('#code-validation-message').html("请求超时,请稍后再试");
         }
         else{
@@ -46,6 +48,27 @@ $(function(){
             
     });
     
+    $user.focusout(function(){
+        if(!validate('#user')){
+            $user.select();
+        }
+    });
+    $pwd.focusout(function(){
+        if(!validate('#pwd')){
+            $pwd.select();
+        }
+    });
+    $tel.focusout(function(){
+        if(!validate('#tel')){
+            $tel.select();
+        }
+    });
+    $code.focusout(function(){
+        if(!validate('#code')){
+            $code.select();
+        }
+    });
+
     $tip.mouseover(function(){
         $list.css("display","block");
     })
@@ -53,54 +76,45 @@ $(function(){
         $list.css("display","none");
     })
 
-    function validateCode(){
-        if(validateUser('#user')&&validateTel('#tel')&&validatePwd('#pwd')&&$code.val()){
-            $('#code-validation-message').html("");
-            return true;
-        }
-        $('#code-validation-message').html("请求超时,请稍后再试");
-        return false;
-    }
-    function validateUser(filed){
-        //get DOM error message
+    function validate(filed){
         var $data=$(filed),
-            $msg=$(filed+'-validation-message');   
-        //validate type
-        if(!(/^(?!(\d+)$)[\u4e00-\u9fff\w]+$/.test($data.val()))){
-            $msg.html('用户名仅支持中英文、数字和下划线，且不能为纯数字');
-            $data.select();
-            return false;
+            $msg=$(filed+'-validation-message');
+        switch(filed){
+            case '#code':
+                if(validate('#user')&&validate('#tel')&&validate('#pwd')&&$data.val()){
+                    $msg.html("");
+                    return true;
+                }
+                $msg.html("请求超时,请稍后再试");
+                return false;
+            case "#user":
+                if(!(/^(?!(\d+)$)[\u4e00-\u9fff\w]+$/.test($data.val()))){
+                    $msg.html('用户名仅支持中英文、数字和下划线，且不能为纯数字');
+                    $data.select();
+                    return false;
+                }
+                $msg.html('');
+                return true;
+            case "#pwd":
+                if(!(/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^[^\s\u4e00-\u9fa5]{8,14}$/.test($data.val()))){
+                    $msg.html('密码设置不符合要求');
+                    $data.select();
+                    return false;
+                }
+                $msg.html('');
+                return true;
+            case "#tel":
+                if(!(/^1[3456789]\d{9}$/.test($data.val()))){
+                    $msg.html('手机号码格式不正确');
+                    $data.select();
+                    return false;
+                }
+                $msg.html('');
+                return true;
+            default:
+                break;
         }
-        $msg.html('');
-        return true;
-
+        
     }
-    function validateTel(filed){
-        //get DOM error message
-        var $data=$(filed),
-            $msg=$(filed+'-validation-message');   
-        //validate type
-        if(!(/^1[3456789]\d{9}$/.test($data.val()))){
-            $msg.html('手机号码格式不正确');
-            $data.select();
-            return false;
-        }
-        $msg.html('');
-        return true;
-
-    }
-    function validatePwd(filed){
-        //get DOM error message
-        var $data=$(filed),
-            $msg=$(filed+'-validation-message');   
-        //validate type
-        if(!(/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^[^\s\u4e00-\u9fa5]{8,14}$/.test($data.val()))){
-            $msg.html('密码设置不符合要求');
-            $data.select();
-            return false;
-        }
-        $msg.html('');
-        return true;
-
-    }
+    
 });
